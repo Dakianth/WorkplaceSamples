@@ -14,20 +14,25 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CefSharp;
 using CefSharp.Wpf;
+using CustomBrowser.Library;
+using MahApps.Metro.Controls;
+using Reports.Library;
 
 namespace CustomBrowser
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : MetroWindow
     {
+        ChromiumWebBrowser browser;
         public MainWindow()
         {
             InitializeComponent();
 
-            var url = "cefsharp://home.html";
-            var browser = new ChromiumWebBrowser()
+            //var url = "https://cefsharp.com/";
+            var url = "localfolder://cefsharp/";
+            browser = new ChromiumWebBrowser()
             {
                 Address = url,
                 BrowserSettings =
@@ -37,7 +42,19 @@ namespace CustomBrowser
                 }
             };
 
+            browser.RegisterJsObject("bound", new BoundObject(), BindingOptions.DefaultBinder);
+            browser.RegisterAsyncJsObject("boundAsync", new AsyncBoundObject(), BindingOptions.DefaultBinder);
             uxContent.Content = browser;
+        }
+
+        private void ShowReport_Click(object sender, RoutedEventArgs e)
+        {
+            ReportManager.Run();
+        }
+
+        private void ShowDevTools_Click(object sender, RoutedEventArgs e)
+        {
+            browser.ShowDevTools();
         }
     }
 }

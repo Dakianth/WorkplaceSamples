@@ -1,16 +1,67 @@
-﻿<Window
+﻿<Controls:MetroWindow
     x:Class="CustomBrowser.MainWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
     xmlns:cefSharp="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
     xmlns:local="clr-namespace:CustomBrowser"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="MainWindow"
     Width="525"
     Height="350"
+    WindowState="Maximized"
     mc:Ignorable="d">
     <Grid>
-        <ContentControl x:Name="uxContent" />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Label
+                HorizontalAlignment="Right"
+                VerticalAlignment="Center"
+                Content="URL:" />
+            <TextBox
+                x:Name="test"
+                Grid.Column="1"
+                Controls:TextBoxHelper.ButtonCommand="{Binding Content.ReloadCommand, Mode=OneWay}"
+                Style="{DynamicResource SearchMetroTextBox}"
+                Text="{Binding Content.Address, ElementName=uxContent}" />
+            <Button
+                x:Name="showReport"
+                Grid.Column="2"
+                Width="30"
+                Height="30"
+                Margin="4"
+                Padding="0"
+                Click="ShowReport_Click">
+                <iconPacks:PackIconMaterial
+                    Width="20"
+                    Height="20"
+                    Kind="ChartBar" />
+            </Button>
+            <Button
+                x:Name="showDevTools"
+                Grid.Column="3"
+                Width="30"
+                Height="30"
+                Margin="4"
+                Padding="0"
+                Click="ShowDevTools_Click">
+                <iconPacks:PackIconMaterial
+                    Width="20"
+                    Height="20"
+                    Kind="Xml" />
+            </Button>
+        </Grid>
+        <ContentControl x:Name="uxContent" Grid.Row="1" />
     </Grid>
-</Window>
+</Controls:MetroWindow>

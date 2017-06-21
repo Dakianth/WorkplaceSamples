@@ -10,14 +10,15 @@ namespace Reports.Library
 {
     public class ReportManager
     {
-        public static void Run()
+        public static string Run()
         {
             try
             {
-                ThreadUtils.Run(InternalRun);
+                return ThreadUtils.Run(InternalRun);
             }
             catch (Exception ex)
             {
+                return $"Erro: {ex.Message}!\nDetalhes: {ex.ToString()}";
             }
         }
 

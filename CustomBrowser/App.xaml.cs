@@ -47,7 +47,8 @@ namespace CustomBrowser
             string codeBase = Assembly.GetExecutingAssembly().CodeBase;
             UriBuilder uri = new UriBuilder(codeBase);
             string rootPath = Uri.UnescapeDataString(uri.Path);
-            return Path.Combine(Path.GetDirectoryName(rootPath), path);
+            string result = Path.Combine(Path.GetDirectoryName(rootPath), path);
+            return result;
         }
 
         protected override void OnStartup(StartupEventArgs e)

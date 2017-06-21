@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomBrowser", "CustomBrow
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library", "Library\Library.csproj", "{1D48BCA0-D9C5-4068-8A3B-40AF8390D1FB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportApp", "ReportApp\ReportApp.csproj", "{69AB8299-A0CE-4606-88C0-C91817077091}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,18 @@ Global
 		{1D48BCA0-D9C5-4068-8A3B-40AF8390D1FB}.Release|x64.Build.0 = Release|Any CPU
 		{1D48BCA0-D9C5-4068-8A3B-40AF8390D1FB}.Release|x86.ActiveCfg = Release|Any CPU
 		{1D48BCA0-D9C5-4068-8A3B-40AF8390D1FB}.Release|x86.Build.0 = Release|Any CPU
+		{69AB8299-A0CE-4606-88C0-C91817077091}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69AB8299-A0CE-4606-88C0-C91817077091}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69AB8299-A0CE-4606-88C0-C91817077091}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{69AB8299-A0CE-4606-88C0-C91817077091}.Debug|x64.Build.0 = Debug|Any CPU
+		{69AB8299-A0CE-4606-88C0-C91817077091}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{69AB8299-A0CE-4606-88C0-C91817077091}.Debug|x86.Build.0 = Debug|Any CPU
+		{69AB8299-A0CE-4606-88C0-C91817077091}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69AB8299-A0CE-4606-88C0-C91817077091}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69AB8299-A0CE-4606-88C0-C91817077091}.Release|x64.ActiveCfg = Release|Any CPU
+		{69AB8299-A0CE-4606-88C0-C91817077091}.Release|x64.Build.0 = Release|Any CPU
+		{69AB8299-A0CE-4606-88C0-C91817077091}.Release|x86.ActiveCfg = Release|Any CPU
+		{69AB8299-A0CE-4606-88C0-C91817077091}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
