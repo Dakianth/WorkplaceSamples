@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" type="Net" application="StiReport">
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <BusinessObjects isList="true" count="0" />
+    <Databases isList="true" count="1">
+      <Firebird Ref="2" type="Stimulsoft.Report.Dictionary.StiFirebirdDatabase" isKey="true">
+        <Alias>Firebird</Alias>
+        <ConnectionStringEncrypted>wG7NwktfusHDTaz4Smz2P8JW9SvLS8P14lyokGEYpBfVyN0CQwPzvOJcScxjROAX3tJpCWJZQ5Xjd8XMYxixStXYu0hNbVsJRkm9xG9Ed17UWGUJzU3z3WtbpZhNXGVn1EB1zclXAfVvRKGAagDhG4taaQJJBZP1bFqo/OBEIg/gPtGJSQOjzelNuYDvGKA71VrZaEl2y4XiR6U=</ConnectionStringEncrypted>
+        <Name>Firebird</Name>
+      </Firebird>
+    </Databases>
+    <DataSources isList="true" count="1">
+      <reg Ref="3" type="Stimulsoft.Report.Dictionary.StiFirebirdSource" isKey="true">
+        <Alias>reg</Alias>
+        <Columns isList="true" count="2">
+          <value>DocumentData,System.Byte[]</value>
+          <value>OrderNumber,System.Int64</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Name>reg</Name>
+        <NameInSource>Firebird</NameInSource>
+        <Parameters isList="true" count="2">
+          <value>ProtocolNumber,_x0031_4315,1,0</value>
+          <value>CurrentSystem,_x0031_6,10,0</value>
+        </Parameters>
+        <SqlCommand>select
+	"Document"."Data" "DocumentData",
+    "Document"."OrderNumber"
+
+from "Numeration"
+
+left outer join "AbstractRegister" on "AbstractRegister"."Id" = "Numeration"."AbstractRegisterId"
+left outer join "Document" on "Document"."AbstractRegisterId" = "AbstractRegister"."Id"
+
+where "Numeration"."Number" = @ProtocolNumber and "Numeration"."RegisteredSystem" = @CurrentSystem
+
+order by
+"Document"."OrderNumber"</SqlCommand>
+      </reg>
+    </DataSources>
+    <Relations isList="true" count="0" />
+    <Report isRef="0" />
+    <Resources isList="true" count="0" />
+    <Variables isList="true" count="0" />
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings isList="true" count="0" />
+  <MetaTags isList="true" count="0" />
+  <Pages isList="true" count="1">
+    <Page1 Ref="4" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="1">
+        <DataBand1 Ref="5" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,0.4,19,2</ClientRectangle>
+          <Components isList="true" count="1">
+            <Image1 Ref="6" type="Image" isKey="true">
+              <AspectRatio>True</AspectRatio>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,19,2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <DataColumn>reg.DocumentData</DataColumn>
+              <DockStyle>Fill</DockStyle>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>54e3be5e34f54f709fe67c71a66c0d68</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <MaxSize>19.2,26.6</MaxSize>
+              <Name>Image1</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Stretch>True</Stretch>
+            </Image1>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <DataSourceName>reg</DataSourceName>
+          <Filters isList="true" count="0" />
+          <Guid>d7c26364c446498785c0dbfdc2751824</Guid>
+          <MaxHeight>26.6</MaxHeight>
+          <Name>DataBand1</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Sort isList="true" count="0" />
+        </DataBand1>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Guid>dc48e60e93314108b407fe6a6736e473</Guid>
+      <Margins>1,1,1,1</Margins>
+      <Name>Page1</Name>
+      <PageHeight>29.7</PageHeight>
+      <PageWidth>21</PageWidth>
+      <Report isRef="0" />
+      <Watermark Ref="7" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Page1>
+  </Pages>
+  <PreviewSettings>268435455</PreviewSettings>
+  <PrinterSettings Ref="8" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportChanged>6/20/2017 5:33:29 PM</ReportChanged>
+  <ReportCreated>6/20/2017 5:30:34 PM</ReportCreated>
+  <ReportFile />
+  <ReportGuid>f3af6d0e8f5d404fbb670940b27b700c</ReportGuid>
+  <ReportImage isNull="true" />
+  <ReportName>Report</ReportName>
+  <ReportUnit>Centimeters</ReportUnit>
+  <ReportVersion>2016.3.0</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    public class Report : Stimulsoft.Report.StiReport
+    {
+        public Report()        {
+            this.InitializeComponent();
+        }
+
+        #region StiReport Designer generated code - do not modify
+        #endregion StiReport Designer generated code - do not modify
+    }
+}
+</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="0" />
+</StiSerializer>
